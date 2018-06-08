@@ -1,12 +1,12 @@
 <?php
 
-class WPML_Custom_Post_Sync_Settings {
+class WPML_Element_Sync_Settings {
 
 	/** @var array $settings */
 	private $settings;
 
-	public function __construct( SitePress $sitepress ) {
-		$this->settings = $sitepress->get_setting( 'custom_posts_sync_option', array() );
+	public function __construct( array $settings ) {
+		$this->settings = $settings;
 	}
 
 	/**
@@ -21,4 +21,5 @@ class WPML_Custom_Post_Sync_Settings {
 			       $this->settings[ $type ] == WPML_CONTENT_TYPE_DISPLAY_AS_IF_TRANSLATED
 		       );
 	}
+
 }

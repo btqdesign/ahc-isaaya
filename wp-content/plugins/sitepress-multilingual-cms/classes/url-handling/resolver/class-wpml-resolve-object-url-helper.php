@@ -1,6 +1,6 @@
 <?php
 
-class WPML_Resolve_Object_Url_Helper {
+class WPML_Resolve_Object_Url_Helper implements IWPML_Resolve_Object_Url {
 	const CACHE_GROUP = 'resolve_object_url';
 
 	/**
