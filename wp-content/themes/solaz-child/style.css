@@ -45,13 +45,17 @@ Text Domain:  solaz-child
 	margin: 22px;
 	margin-right: 2%;
 }
-.menu-subheader-menu-container{
-    padding-top: 17px;
-}
 
-ul#menu-subheader-menu{
+/* Main Menu */
+ul#menu-subheader-menu, ul#menu-subheader_menu_en{
 	height: 50px;
 	padding-top: 5px;
+}
+
+/* Submenu */
+
+.menu-subheader-menu-container, .menu-main_menu_en-container{
+    padding-top: 17px;
 }
 
 textarea.wpcf7-form-control.wpcf7-textarea.form-control.placeholder{
