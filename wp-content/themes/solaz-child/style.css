@@ -56,15 +56,9 @@ ul#menu-subheader-menu, ul#menu-subheader_menu_en{
 
 /* Submenu */
 
-.menu-subheader-menu-container{
+.menu-subheader-menu-container, .menu-main_menu_en-container {
     padding-top: 17px;
 }
-
-.menu-main_menu_en-container {
-	padding-bottom: 21.5px;
-}
-
-
 
 
 textarea.wpcf7-form-control.wpcf7-textarea.form-control.placeholder{
