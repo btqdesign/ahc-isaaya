@@ -49,9 +49,14 @@ Text Domain:  solaz-child
 
 
 /* Main Menu */
-ul#menu-subheader-menu, ul#menu-subheader_menu_en{
+ul#menu-subheader-menu{
 	height: 50px;
 	padding-top: 5px;
+}
+
+ul#menu-subheader_menu_en{
+	height: 50px;
+	padding-top: 0px;
 }
 
 /* Submenu */
