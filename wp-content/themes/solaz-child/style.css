@@ -56,8 +56,12 @@ ul#menu-subheader-menu{
 
 /* Submenu */
 
-.menu-subheader-menu-container,ul#menu-subheader_menu_en{
+.menu-subheader-menu-container{
     padding-top: 17px;
+}
+
+ul#menu-subheader_menu_en{
+    padding-top: 50px;
 }
 
 
