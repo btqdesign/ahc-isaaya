@@ -45,11 +45,11 @@ Text Domain:  solaz-child
 	margin: 22px;
 	margin-right: 2%;
 }
-ul#menu-subheader-menu, ul#menu-subheader_menu_en{
+ul#menu-header-menu, ul#menu-subheader-menu, ul#menu-subheader_menu_en{
 	height: 50px;
 	padding-top: 5px;
 }
-.menu-subheader-menu-container, .menu-subheader_menu_en{
+.menu-subheader-menu-container, .menu-main_menu_en-container, .menu-subheader_menu_en{
     padding-top: 17px;
 }
 
