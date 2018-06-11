@@ -11,11 +11,11 @@ p {
   line-height: 24px;
 }
 .side-breadcrumb {
-  background-image: url('//isaaya.idevol.net/wp-content/themes/solaz/images/bg-breadcrumb.jpg');
+  background-image: url('//isaaya.idevol.net/wp-content/uploads/2018/06/banners_isaaya-12.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 .main-navigation, header {
   background-color: #fff;
@@ -35,7 +35,7 @@ h1 {
   font-size: 40px;
 }
 h2 {
-  font-family: Libre Baskerville;
+  font-family: Lato;
   color: #00536c;
   font-size: 36px;
 }
