@@ -49,14 +49,14 @@ Text Domain:  solaz-child
 
 
 /* Main Menu */
-ul#menu-sub-header-menu{
+ul#menu-subheader-menu{
 	height: 50px;
 	padding-top: 5px;
 }
 
 /* Submenu */
 
-.menu-subheader-menu-container{
+.menu-sub-header-menu-container{
     padding-top: 17px;
 }
 
