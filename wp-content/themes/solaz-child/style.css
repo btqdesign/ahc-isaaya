@@ -56,7 +56,7 @@ ul#menu-subheader-menu{
 
 /* Submenu */
 
-ul#menu-sub-header-menu-container{
+.menu-sub-header-menu-container{
     padding-top: 17px;
 }
 
