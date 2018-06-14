@@ -26,4 +26,8 @@ logs
 .tmb/*
 
 info.php
-info-siwp.php
+info-siwp.ph
+
+wp-content/themes/solaz/css/config/skin.css
+wp-content/themes/solaz/sass/config/_config_skin.scss
+p
