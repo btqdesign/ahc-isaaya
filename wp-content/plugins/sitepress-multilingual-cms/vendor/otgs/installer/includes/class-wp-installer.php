@@ -2170,7 +2170,7 @@ final class WP_Installer {
 							     )
 							) {
 
-								if ( ! empty( $download['free-on-wporg'] ) && $download['channel'] == WP_Installer_Channels::CHANNEL_PRODUCTION ) {
+                                if ( $this->should_fallback_under_wp_org_repo( $download, $site_key ) ) {
 									return false; // use data from wordpress.org
 								}
 

@@ -430,7 +430,7 @@ function btq_booking_tc_amenity_icon_name($amenityCode) {
  * @param string $hotelCode Código de hotel en TravelClick.
  * @return string Información retornada de la consulta.
  */
-function btq_booking_tc_admin_debug_rooms($hotelCode = '131328') {
+function btq_booking_tc_admin_debug_rooms($hotelCode = '131330') {
 	$response = btq_booking_tc_soap_query($hotelCode, '2018-09-11', '2018-09-12');
 	
 	$RoomAmenities = array();
@@ -484,7 +484,7 @@ function btq_booking_tc_admin_debug_rooms($hotelCode = '131328') {
  * @param string $hotelCode Código de hotel en TravelClick
  * @return string Información retornada de la consulta.
  */
-function btq_booking_tc_admin_debug_packages($hotelCode = '131328') {
+function btq_booking_tc_admin_debug_packages($hotelCode = '131330') {
 	$response = btq_booking_tc_soap_query($hotelCode, '2018-09-11', '2018-09-12', 'packages');
 	
 	$RoomAmenities = array();
@@ -556,8 +556,8 @@ function btq_booking_tc_admin_debug_page() {
 		-->
 		<!--
 		<div style="background-color: white;">
-			<?php /* btq_booking_tc_admin_debug_rooms('95698'); ?>
-			<?php btq_booking_tc_admin_debug_rooms('131328'); */ ?>
+			<?php /* btq_booking_tc_admin_debug_rooms('95697'); ?>
+			<?php btq_booking_tc_admin_debug_rooms('131330'); */ ?>
 		</div>
 		-->
 		<!--
@@ -595,7 +595,7 @@ function btq_booking_tc_admin_debug_page() {
 				$dayRangeStart = $date->format('Y-m-d');
 				$dayRangeEnd   = date('Y-m-d', strtotime($date->format('Y-m-d') . ' + 1 day'));
 				$disponibilidad = 'OK';
-				if (btq_booking_tc_soap_query('131328', $dayRangeStart, $dayRangeEnd) === FALSE){
+				if (btq_booking_tc_soap_query('131330', $dayRangeStart, $dayRangeEnd) === FALSE){
 					$disponibilidad = 'NO';
 					$datesUnavailable[] = $dayRangeStart;
 				}
@@ -656,7 +656,7 @@ function btq_booking_tc_generate_unavailable_dates(){
 	foreach($dates as $date){
 		$dayRangeStart = $date->format('Y-m-d');
 		$dayRangeEnd   = date('Y-m-d', strtotime($date->format('Y-m-d') . ' + 1 day'));
-		if (btq_booking_tc_soap_query('131328', $dayRangeStart, $dayRangeEnd) === FALSE){
+		if (btq_booking_tc_soap_query('131330', $dayRangeStart, $dayRangeEnd) === FALSE){
 			$datesUnavailable[] = $dayRangeStart;
 		}
 	}
@@ -745,13 +745,13 @@ function btq_booking_tc_grid_rooms($language = 'es', $dateRangeStart = '2018-09-
 	
 	switch($language){
 		case 'es':
-			$hotelCode  = '131328';
+			$hotelCode  = '131330';
 			$currency   = 'MXN';
 			$theme      = '13670';
 			$languageId = '2';
 		break;
 		case 'en':
-			$hotelCode  = '95698';
+			$hotelCode  = '95697';
 			$currency   = 'USD';
 			$theme      = '13671';
 			$languageId = '1';
@@ -947,13 +947,13 @@ function btq_booking_tc_grid_packages($language = 'es', $dateRangeStart = '2018-
 	
 	switch($language){
 		case 'es':
-			$hotelCode  = '131328';
+			$hotelCode  = '131330';
 			$currency   = 'MXN';
 			$theme      = '13670';
 			$languageId = '2';
 		break;
 		case 'en':
-			$hotelCode  = '95698';
+			$hotelCode  = '95697';
 			$currency   = 'USD';
 			$theme      = '13671';
 			$languageId = '1';
