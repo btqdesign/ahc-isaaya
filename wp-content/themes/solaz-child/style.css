@@ -26,7 +26,7 @@ Text Domain:  solaz-child
 	.btq-book-now ul li {
 		background-color: #00536c;
 	    border: none;
-	    color: white;
+	    text-decoration-color: white;
 	    padding: 15px 70px;
 	    text-align: center;
 	    text-decoration: none;
