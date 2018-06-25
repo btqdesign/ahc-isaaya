@@ -236,7 +236,7 @@ function btq_booking_tc_soap_query_string($hotelCode, $dateRangeStart, $dateRang
 					<Source>
 						<RequestorID ID="1" Type="1" />
 						<BookingChannel Type="18">
-							<CompanyName Code="AHC" />
+							<CompanyName Code="'. esc_attr( get_option('btq_booking_tc_soap_sales_channel_info_id') ) .'" />
 						</BookingChannel>
 					</Source>
 				</POS>
@@ -279,7 +279,7 @@ function btq_booking_tc_soap_query_string($hotelCode, $dateRangeStart, $dateRang
 					<Source>
 						<RequestorID ID="1" Type="1" />
 						<BookingChannel Type="18">
-							<CompanyName Code="AHC" />
+							<CompanyName Code="'. esc_attr( get_option('btq_booking_tc_soap_sales_channel_info_id') ) .'" />
 						</BookingChannel>
 					</Source>
 				</POS>
@@ -463,8 +463,8 @@ function btq_booking_tc_amenity_icon_name($amenityCode) {
  * @param string $hotelCode Código de hotel en TravelClick.
  * @return string Información retornada de la consulta.
  */
-function btq_booking_tc_admin_debug_rooms($hotelCode = '131328') {
-	$response = btq_booking_tc_soap_query($hotelCode, '2018-09-11', '2018-09-12');
+function btq_booking_tc_admin_debug_rooms($hotelCode) {
+	$response = btq_booking_tc_soap_query( $hotelCode, btq_booking_tc_grid_date_start(), btq_booking_tc_grid_date_end(btq_booking_tc_grid_date_start()) );
 	
 	$RoomAmenities = array();
 	$amenities = array();
@@ -482,9 +482,11 @@ function btq_booking_tc_admin_debug_rooms($hotelCode = '131328') {
 	?>
 	</table>
 	
+	<?php /*
 	<pre>
 		<?php $RoomAmenitiesDebug = var_export($RoomAmenities); echo htmlentities($RoomAmenitiesDebug); ?>
 	</pre>
+	*/ ?>
 	
 	<?php
 	
@@ -574,6 +576,7 @@ function btq_booking_tc_admin_debug_page() {
 ?>
 	<div class="wrap">
 		<h1>Debug TravelClick</h1>
+		<?php /*btq_booking_tc_generate_unavailable_dates();*/ ?>
 		<!--
 		<form method="post" action="options.php">
 			<?php /* settings_fields( 'btq-booking-tc-settings' ); ?>
@@ -589,8 +592,8 @@ function btq_booking_tc_admin_debug_page() {
 		-->
 		
 		<div style="background-color: white;">
-			<?php btq_booking_tc_admin_debug_rooms('131330'); ?>
-			<?php btq_booking_tc_admin_debug_rooms('95697'); ?>
+			<?php btq_booking_tc_admin_debug_rooms(esc_attr( get_option('btq_booking_tc_hotel_code_es') )); ?>
+			<?php btq_booking_tc_admin_debug_rooms(esc_attr( get_option('btq_booking_tc_hotel_code_us') )); ?>
 		</div>
 		
 		<!--
@@ -992,7 +995,7 @@ function btq_booking_tc_grid_packages($language = 'es', $dateRangeStart = '2018-
 			$str_book_now = 'Reservar Ahora';
 		break;
 		case 'en':
-			$hotelCode    = esc_attr( get_option('btq_booking_tc_hotel_code_en') ); /* 95698 */
+			$hotelCode    = esc_attr( get_option('btq_booking_tc_hotel_code_us') ); /* 95698 */
 			$currency     = 'USD';
 			$themeid      = esc_attr( get_option('btq_booking_tc_hotel_themeid_us') ); /* 13671 */
 			$str_book_now = 'Book Now';
@@ -1502,6 +1505,7 @@ function btq_booking_tc_grid_packages_ajax() {
 	else {
 		echo '';
 	}
+	wp_die();
 }
 add_action( 'wp_ajax_btq_booking_tc_grid_packages', 'btq_booking_tc_grid_packages_ajax' );
 add_action( 'wp_ajax_nopriv_btq_booking_tc_grid_packages', 'btq_booking_tc_grid_packages_ajax' );
@@ -1523,6 +1527,7 @@ function btq_booking_tc_grid_rooms_ajax() {
 	else {
 		echo '';
 	}
+	wp_die();
 }
 add_action( 'wp_ajax_btq_booking_tc_grid_rooms', 'btq_booking_tc_grid_rooms_ajax' );
 add_action( 'wp_ajax_nopriv_btq_booking_tc_grid_rooms', 'btq_booking_tc_grid_rooms_ajax' );
