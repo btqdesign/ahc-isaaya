@@ -1,6 +1,17 @@
+@font-face {
+  font-family: 'New-Baskerville-Italic';
+  src: url('New-Baskerville-W01-Italic.eot');
+  src: url('New-Baskerville-W01-Italic.woff2') format('woff2'),
+       url('New-Baskerville-W01-Italic.woff') format('woff'),
+       url('New-Baskerville-W01-Italic.ttf') format('truetype'),
+       url('New-Baskerville-W01-Italic.svg#New-Baskerville-Italic') format('svg'),
+       url('New-Baskerville-W01-Italic.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 h2 {
-	font-family: 'Lato' !important;
+	font-family: 'New-Baskerville-Italic' !important;
 	font-weight: normal !important;
 	font-style: normal !important;
 }
