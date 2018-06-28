@@ -14,6 +14,7 @@ h2 {
 	font-family: 'New-Baskerville-Italic' !important;
 	font-weight: normal !important;
 	font-style: normal !important;
+	text-transform: none !important;
 }
 
 h1,h3,h4,h5,h6 {
