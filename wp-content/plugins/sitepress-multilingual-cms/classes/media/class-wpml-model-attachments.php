@@ -25,12 +25,16 @@ class WPML_Model_Attachments {
 	 * @param int $duplicated_attachment_id
 	 */
 	public function duplicate_post_meta_data( $attachment_id, $duplicated_attachment_id ) {
-		$meta = get_post_meta( $attachment_id, '_wp_attachment_metadata', true );
-		update_post_meta( $duplicated_attachment_id, '_wp_attachment_metadata', $meta );
-		update_post_meta( $duplicated_attachment_id, 'wpml_media_processed', 1 );
+		foreach ( array( '_wp_attachment_metadata', '_wp_attached_file' ) as $meta_key ) {
+			$duplicated_meta_value = get_post_meta( $duplicated_attachment_id, $meta_key, true );
 
-		$attached_file = get_post_meta( $attachment_id, '_wp_attached_file', true );
-		update_post_meta( $duplicated_attachment_id, '_wp_attached_file', $attached_file );
+			if ( ! $duplicated_meta_value ) {
+				$source_meta_value = get_post_meta( $attachment_id, $meta_key, true );
+				update_post_meta( $duplicated_attachment_id, $meta_key, $source_meta_value );
+			}
+		}
+
+		update_post_meta( $duplicated_attachment_id, 'wpml_media_processed', 1 );
 
 		do_action( 'wpml_media_create_duplicate_attachment', $attachment_id, $duplicated_attachment_id );
 	}
@@ -116,6 +120,8 @@ class WPML_Model_Attachments {
 		$post = get_post( $attachment_id );
 		$post->post_parent = $parent_id_in_target_language;
 		$post->ID          = null;
+
+		update_post_meta( $parent_id_in_target_language, '_wpml_media_duplicate', true ); // add the post meta if missing
 
 		$duplicated_attachment_id = $this->insert_attachment( $post );
 		if ( ! $duplicated_attachment_id ) {
