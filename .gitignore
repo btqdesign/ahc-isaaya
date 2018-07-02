@@ -30,4 +30,5 @@ info-siwp.ph
 
 wp-content/themes/solaz/css/config/skin.css
 wp-content/themes/solaz/sass/config/_config_skin.scss
-p
+
+elfsight-instagram-feed-api/storage/*
