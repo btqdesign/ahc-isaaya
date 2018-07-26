@@ -1325,7 +1325,7 @@ function btq_booking_grid_form($language = 'es') {
 		
 		<section class="row">
 			<article class="col-md-12">
-				<h5 class="hosp"><?php _e('Select a PACKAGE or ROOM', 'btq-booking'); ?></h5>
+				<h5 class="hosp"><?php _e('CHECK THE RATE OF YOUR STAY', 'btq-booking'); ?></h5>
 			</article>
 		</section>
 
