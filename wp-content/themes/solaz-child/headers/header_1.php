@@ -51,7 +51,9 @@ $solaz_settings = solaz_check_theme_options();
 			                ?>
 			                <div class="menu-main_menu-container btq-book-now">
 				                <ul id="menu-main_menu" class="mega-menu">
-					                <li id="menu-item-6362" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-6362"><a href="https://hotel.idevol.net/es/">Book Now</a></li>
+									<li id="menu-item-6362" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-6362">
+					                	<?php btq_booking_url_book_now(); ?>
+					                </li>
 								</ul>
 							</div>
 			            </div>
@@ -221,13 +223,7 @@ $solaz_settings = solaz_check_theme_options();
 			        	<?php if(isset($solaz_settings['header_book_text']) && $solaz_settings['header_book_text'] !=''):?>
 			        		<?php $solaz_settings['header_book_link'] = (isset($solaz_settings['header_book_link']) && $solaz_settings['header_book_link']!='')? $solaz_settings['header_book_link']:'hola';?>
 			        		<div class="link-contact f_right main-bg display-inline-b">
-			        			<?php if ($language == 'es'):?>	
-								<a class="" target="_blank" href="https://reservations.travelclick.com/131330?HotelID=131330&DateOut=&DateIn=&Adults=&Children=&DateIn_submit=&LanguageID=2&Rooms=1&_ga=2.149915382.1902593929.1530284080-919830695.1530284080&DateOut_submit=#/datesofstay">Reservar Ahora</a>
-								<?php else:?>
-								<a class="" target="_blank" href="https://reservations.travelclick.com/95697?HotelID=95697&DateOut=&DateIn=&Adults=&Children=&DateIn_submit=&LanguageID=1&Rooms=1&_ga=2.149915382.1902593929.1530284080-919830695.1530284080&DateOut_submit=#/datesofstay">Book Now</a>
-								</a>	
-															
-								<?php endif;?>
+							<?php  btq_booking_url_book_now(); ?>
 			        		</div>
 			        	<?php endif;?>	
 					<?php endif;?>	        		        	
