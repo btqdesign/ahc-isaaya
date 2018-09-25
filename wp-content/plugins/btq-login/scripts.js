@@ -1,15 +1,15 @@
 
 
 // Aqui se inicializa firebase
-var config = {
-	apiKey: "AIzaSyAJKAc_-VwG7Lt_LeSjbNnr8LEzms1WJxk",
-	authDomain: "btq-ahm-gran-hotel.firebaseapp.com",
-	databaseURL: "https://btq-ahm-gran-hotel.firebaseio.com",
-	projectId: "btq-ahm-gran-hotel",
-	storageBucket: "btq-ahm-gran-hotel.appspot.com",
-	messagingSenderId: "241886061865"
-};
-firebase.initializeApp(config);
+	var config = {
+    apiKey: "AIzaSyDLBleqbzUZEh1SOJVpEMpHroxtiA4F3n0",
+    authDomain: "btq-ahc-isaaya.firebaseapp.com",
+    databaseURL: "https://btq-ahc-isaaya.firebaseio.com",
+    projectId: "btq-ahc-isaaya",
+    storageBucket: "btq-ahc-isaaya.appspot.com",
+    messagingSenderId: "1926216197"
+  };
+  firebase.initializeApp(config);
 
 
 //Funcion para mantener la sesion iniciada cuando se cierra la pestaña o navegador
